@@ -1,6 +1,6 @@
-# diffindiff: Robust Non-parametric Difference-in-differences estimation
+# diffindiff: Nonparametric Heterogeneous Treatment Effect Estimation in Repeated Cross Sectional Designs
 
-This package implements methods for non-parametric difference-in-differences estimation, as proposed by Lu, Nie, Wager (2019). We consider a
+This package implements methods for non-parametric difference-in-differences estimation, as proposed by Nie, Lu, and Wager (2021) as an update version to the previous paper ``Robust Nonparametric Difference-in-Differences Estimation" (Lu, Nie, and Wager 2019). We consider a
 setup where we observe data `(X, Y, S, T)` generated according
 to the following model:
 ```
@@ -15,7 +15,7 @@ and we want to estimate the average effect `TAU = E[tau(X)]`. The general framew
 To install this package in R, run the following commands:
 ```R
 library(devtools) 
-install_github("clu0/diffindiff")
+install_github("xnie/diffindiff")
 ```
 ### Example usage
 
@@ -60,12 +60,14 @@ DiD_AMLE_fit = DiD(X = Basis,
   Si = Si,
   constant_eff = "non_constant",
   gamma = gamma.minimax)
-
+  
+# To repeat the heterogeneous treatment effect simulation experiments 
+cd experiments
+bash simulations/start_hte.sh
 ```
 
 #### References
-Chen Lu, Xinkun Nie, Stefan Wager.
-<b>Robust Nonparametric Difference-in-Differences
-Estimation.</b>
-2019.
-[<a href="https://arxiv.org/pdf/1905.11622.pdf">arxiv</a>]
+Xinkun Nie, Chen Lu, Stefan Wager.
+<b>Nonparametric Heterogeneous Treatment Effect Estimation in Repeated Cross Sectional Designs</b>
+2021.
+[<a href="https://arxiv.org/abs/1905.11622v2">arxiv</a>]
